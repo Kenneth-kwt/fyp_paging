@@ -22,7 +22,17 @@ export async function generateMetadata({ params }: ProjectResultPageProps): Prom
     description: "Genetic stroke risk analysis results and recommendations",
   }
 }
-
+async function getProjectIds() {
+  // Replace with your logic (e.g., fetch from API or database)
+  // Example: Static list or API call
+  return ['1', '2', '3']; // Adjust based on your data source
+}
+export async function generateStaticParams() {
+  const projectIds = await getProjectIds();
+  return projectIds.map((projectId) => ({
+    projectId,
+  }));
+}
 export default async function ProjectResultPage({ params }: ProjectResultPageProps) {
   const { projectId } = await params
   const { title } = await fetchProject(projectId)
