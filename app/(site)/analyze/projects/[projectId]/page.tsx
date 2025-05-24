@@ -20,7 +20,17 @@ export async function generateMetadata({ params }: ProjectEditPageProps): Promis
     description: "",
   }
 }
-
+async function getProjectIds() {
+  // Replace with your logic (e.g., fetch from API or database)
+  // Example: Static list or API call
+  return ['1', '2', '3']; // Adjust based on your data source
+}
+export async function generateStaticParams() {
+  const projectIds = await getProjectIds();
+  return projectIds.map((projectId) => ({
+    projectId,
+  }));
+}
 export default async function ProjectEditPage({ params }: ProjectEditPageProps) {
   const { projectId } = await params
 
