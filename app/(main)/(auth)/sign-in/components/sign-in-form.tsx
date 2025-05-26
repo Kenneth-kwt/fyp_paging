@@ -29,7 +29,8 @@ export const SignInForm = () => {
   const [loading, setLoading] = useState(false)
   const router = useRouter()
   const { signIn } = authClient
-
+  console.log("aaa")
+  console.log(signIn)
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
