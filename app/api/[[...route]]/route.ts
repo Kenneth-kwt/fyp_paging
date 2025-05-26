@@ -1,4 +1,5 @@
-import { app } from "@/server"
+import { app } from "@/server/db"
+import { db } from "@/server/db"
 import { handle } from "hono/vercel"
 
 export const GET = handle(app)

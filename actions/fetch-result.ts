@@ -1,7 +1,7 @@
 "use server"
 
-import { db } from "@/db"
-import { data, results } from "@/db/schemas"
+import { db } from "@/server/db"
+import { data, results } from "@/server/db/schemas"
 import { and, eq } from "drizzle-orm"
 import { fetchSession } from "./fetch-session"
 

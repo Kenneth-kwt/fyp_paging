@@ -1,7 +1,7 @@
 "use server"
 
-import { db } from "@/db"
-import { data, results } from "@/db/schemas"
+import { db } from "@/server/db"
+import { data, results } from "@/server/db/schemas"
 import { actionClient } from "@/lib/action"
 import { z } from "zod"
 import { fetchSession } from "./fetch-session"

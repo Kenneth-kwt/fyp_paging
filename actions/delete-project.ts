@@ -1,7 +1,7 @@
 "use server"
 
-import { db } from "@/db"
-import { project } from "@/db/schemas"
+import { db } from "@/server/db"
+import { project } from "@/server/db/schemas"
 import { actionClient } from "@/lib/action"
 import { eq } from "drizzle-orm"
 import { z } from "zod"

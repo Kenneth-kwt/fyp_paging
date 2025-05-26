@@ -1,5 +1,7 @@
-import { db } from "@/db"
-import { account, jwks, session, user, verification } from "@/db/schemas"
+"use server"
+
+import { db } from "@/server/db"
+import { account, jwks, session, user, verification } from "@/server/db/schemas"
 import { betterAuth } from "better-auth"
 import { drizzleAdapter } from "better-auth/adapters/drizzle"
 import { bearer as bearerPlugin, jwt as jwtPlugin } from "better-auth/plugins"

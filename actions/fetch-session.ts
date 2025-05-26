@@ -1,6 +1,6 @@
 "use server"
 
-import { authClient } from "@/lib/auth-client"
+import { authClient } from "@/actions/auth-client"
 import { headers } from "next/headers"
 
 export const fetchSession = async () => {

@@ -1,10 +1,26 @@
-import { auth } from "@/lib/auth"
+import { auth } from "@/actions/auth"
 import { Hono } from "hono"
 import { cors } from "hono/cors"
 import { csrf } from "hono/csrf"
 import { logger } from "hono/logger"
-import { errorHandler, notFound } from "./middlewares"
+import { errorHandler, notFound } from "../middlewares"
+import { createClient } from "@libsql/client"
+import { drizzle } from "drizzle-orm/libsql"
+import * as schema from "./schemas"
+import { jwtClient } from "better-auth/client/plugins"
+import { createAuthClient } from "better-auth/react"
 
+export const authClient = createAuthClient({
+  baseURL: process.env.NEXT_PUBLIC_APP_URL,
+  plugins: [jwtClient()],
+})
+
+const client = createClient({
+  url: process.env.DATABASE_URL!,
+  authToken: process.env.DATABASE_AUTH_TOKEN,
+})
+
+export const db = drizzle({ client: client, logger: true, schema: schema })
 const app = new Hono<{
   Variables: {
     user: typeof auth.$Infer.Session.user | null
