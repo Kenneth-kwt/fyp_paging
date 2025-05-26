@@ -2,6 +2,7 @@ import { fetchSession } from "@/actions/fetch-session"
 import { SiteFooter } from "./components/site-footer"
 import { SiteHeader } from "./components/site-header"
 
+
 export default async function SiteLayout({
   children,
 }: Readonly<{
