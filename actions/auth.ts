@@ -1,5 +1,3 @@
-"use server"
-
 import { db } from "@/server/db"
 import { account, jwks, session, user, verification } from "@/server/db/schemas"
 import { betterAuth } from "better-auth"
