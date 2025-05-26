@@ -5,6 +5,8 @@ const envVariables = z.object({
   NEXT_PUBLIC_API_URL: z.string(),
   BETTER_AUTH_URL: z.string(),
   BETTER_AUTH_SECRET: z.string(),
+  DATABASE_URL: z.string(),
+  DATABASE_AUTH_TOKEN: z.string()
 })
 
 envVariables.parse(process.env)
