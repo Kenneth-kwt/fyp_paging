@@ -1,7 +1,7 @@
 "use server"
 
 import { actionClient } from "@/lib/action"
-import { authClient } from "@/lib/auth-client"
+import { authServer } from "@/actions/auth-server"
 import { headers } from "next/headers"
 import { z } from "zod"
 
@@ -12,7 +12,7 @@ const schema = z.object({
 export const updateUser = actionClient.schema(schema).action(async ({ parsedInput: { name } }) => {
   try {
     const header = await headers()
-    const { updateUser } = authClient
+    const { updateUser } = authServer
 
     const { data } = await updateUser({
       name,

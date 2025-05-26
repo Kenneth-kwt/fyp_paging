@@ -1,12 +1,12 @@
 "use server"
 
 import { actionClient } from "@/lib/action"
-import { authClient } from "@/lib/auth-client"
+import { authServer } from "@/actions/auth-server"
 import { headers } from "next/headers"
 
 export const deleteAccount = actionClient.action(async () => {
   try {
-    const { deleteUser } = authClient
+    const { deleteUser } = authServer
     const header = await headers()
 
     const { data } = await deleteUser({

@@ -1,12 +1,12 @@
 "use server"
 
 import { actionClient } from "@/lib/action"
-import { authClient } from "@/lib/auth-client"
+import { authServer } from "@/actions/auth-server"
 import { headers } from "next/headers"
 
 export const signOut = actionClient.action(async () => {
   try {
-    const { signOut } = authClient
+    const { signOut } = authServer
     const header = await headers()
 
     const { data } = await signOut({
