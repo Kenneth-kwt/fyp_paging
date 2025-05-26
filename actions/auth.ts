@@ -25,6 +25,7 @@ export const auth = betterAuth({
   advanced: {
     cookiePrefix: "mcs04",
     generateId: false,
+    baseUrl: process.env.NEXT_PUBLIC_APP_URL
   },
   plugins: [jwtPlugin(), bearerPlugin()],
 })
