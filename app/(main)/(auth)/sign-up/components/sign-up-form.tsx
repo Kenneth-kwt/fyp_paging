@@ -3,7 +3,7 @@
 import { Button } from "@/components/ui/button"
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
-import { authClient } from "@/actions/auth-client"
+import { authClient } from "@/lib/auth-client"
 import { zodResolver } from "@hookform/resolvers/zod"
 import Link from "next/link"
 import { useRouter } from "next/navigation"

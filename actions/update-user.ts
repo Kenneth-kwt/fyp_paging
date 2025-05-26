@@ -1,7 +1,7 @@
 "use server"
 
 import { actionClient } from "@/lib/action"
-import { authClient } from "@/actions/auth-client"
+import { authClient } from "@/lib/auth-client"
 import { headers } from "next/headers"
 import { z } from "zod"
 
